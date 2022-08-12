@@ -74,10 +74,6 @@
 
       #region Блок завершения работы программы
 
-
-
-
-
           Console.WriteLine("\nДля завершения работы программы нажмите клавишу \"ESC\".");
 
           ConsoleKeyInfo cons = Console.ReadKey();
