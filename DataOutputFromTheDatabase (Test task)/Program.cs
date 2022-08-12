@@ -23,8 +23,8 @@
       command = connectionDB.CreateCommand();
 
       //---------------
-      command.CommandText = "CREATE TABLE Customers ( Id INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR (50) NOT NULL);" +
-          "\n\nCREATE TABLE Orders (Id INTEGER PRIMARY KEY AUTOINCREMENT, CustomerId INT, FOREIGN KEY (CustomerId)  REFERENCES Customers (Id));" +
+      command.CommandText = "CREATE TABLE IF NOT EXISTS Customers ( Id INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR (50) NOT NULL);" +
+          "\n\nCREATE TABLE IF NOT EXISTS Orders (Id INTEGER PRIMARY KEY AUTOINCREMENT, CustomerId INT, FOREIGN KEY (CustomerId)  REFERENCES Customers (Id));" +
           "\n\nINSERT INTO Customers (Name) VALUES ('Max'), ('Pavel'), ('Ivan'), ('Leonid');" +
           "\n\nINSERT INTO Orders (CustomerId) VALUES (2),(4);";
 
